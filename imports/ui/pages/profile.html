@@ -1,0 +1,22 @@
+<template name="profile">
+    <div id="content-container">
+        <div class="gravatar">
+            <img src="{{user.gravatar}}" alt="avatar">
+        </div>
+        <div>
+            <label>Username - </label>
+            <span>{{user.username}}</span><br>
+            <label>Email - </label>
+            <span>{{user.email}}</span><br>
+            <form class="change-profile">
+                <label>First name</label>
+                <input type="text" name="firstName" value="{{user.firstName}}" /><br>
+                <label>Last name</label>
+                <input type="text" name="lastName" value="{{user.lastName}}" /><br>
+                <input type="submit" value="Change">
+            </form>
+            <br>
+        </div>
+        <span class="clearfix"></span>
+    </div>
+</template>
