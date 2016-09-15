@@ -2,15 +2,14 @@
 <div class="container">
     <header>
         <h1>Post List</h1>
+        {{> loginButtons}}
         <form class="new-post">
             <input type="text" name="text" placeholder="Type to add new post" />
         </form>
     </header>
 
-    <ul>
-        {{#each posts}}
-            {{> post}}
-        {{/each}}
-    </ul>
+    <div id="content-container">
+        {{> Template.dynamic template=main}}
+    </div>
 </div>
 </body>

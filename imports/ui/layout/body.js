@@ -3,9 +3,10 @@
  */
 import { Template } from 'meteor/templating';
 
-import { Posts } from '../api/posts.js';
+import { Posts } from '../../api/posts.js';
 
-import './post.js'
+import '../../startup/both/accounts-config.js';
+import '../components/post.js'
 import './body.html';
 
 Template.body.helpers({
@@ -27,6 +28,10 @@ Template.body.events({
 		Posts.insert({
 			text,
 			createdAt: new Date(), // current time
+			owner: Meteor.userId(),
+			username: Meteor.user().username,
+			comments: [],
+			vote: []
 		});
 
 		// Clear form
