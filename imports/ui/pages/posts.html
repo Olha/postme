@@ -1,0 +1,16 @@
+<template name="posts">
+    <header>
+        <ul class="tab">
+            <li><a href="{{pathFor '/' }}">All post list</a></li>
+            <li><a href="{{pathFor '/posts/public'}}">Public post list</a></li>
+            <li><a href="{{pathFor '/posts/private'}}">Private post list</a></li>
+            <li><a href="{{pathFor '/posts/public/best'}}">Best post list</a></li>
+        </ul>
+        <form class="new-post new-comment">
+            <input type="text" name="text" placeholder="Type to add new post" />
+        </form>
+    </header>
+    {{#each posts}}
+        {{> post}}
+    {{/each}}
+</template>

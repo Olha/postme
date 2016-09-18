@@ -1,9 +1,43 @@
 <template name="post">
-    <li class="{{#if checked}}checked{{/if}}">
-        <button class="delete">&times;</button>
+<li>
+    <button class="delete">&times;</button>
+    <button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+    <button class="discuss"><i class="fa fa-comments" aria-hidden="true"></i></button>
+    {{#if public}}
+        <button class="locking"><i class="fa fa-unlock" aria-hidden="true"></i></button>
+    {{else}}
+        <button class="locking"><i class="fa fa-lock" aria-hidden="true"></i></button>
+    {{/if}}
 
-        <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-
-        <span class="text">{{text}}</span>
+    {{#if isPublicOfOthers}}
+        {{#if isUserVoted}}
+            <button class="voting unvote"><i class="fa fa-star" aria-hidden="true"></i></button>
+        {{else}}
+            <button class="voting vote"><i class="fa fa-star-o" aria-hidden="true"></i></button>
+        {{/if}}
+    {{/if}}
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+    <span class="text" >{{text}}</span> <br>
+    <div>
+        <span>{{votes.length}} vote(s), </span>
+        <span>submited by {{username}}, </span>
+        <span>{{comments.length}} comment(s), </span>
+    </div>
+    {{#if commentsOpen}}
+        {{#if isUser}}
+            <li>
+                <form class="new-comment">
+                    <input type="text" name="commentText" placeholder="Type to add new comment" />
+                </form>
+            </li>
+        {{else}}
+            <li>
+                Please log in to leave a comment!
+            </li>
+        {{/if}}
+        {{#each comments}}
+            {{> comment}}
+        {{/each}}
+    {{/if}}
     </li>
 </template>

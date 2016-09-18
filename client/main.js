@@ -1,5 +1,2 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-
-import './main.html';
-import '../imports/ui/layout/body.js';
+import '../imports/startup/client';
+import '../imports/startup/both';

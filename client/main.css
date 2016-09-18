@@ -49,7 +49,7 @@ form {
     position: relative;
 }
 
-.new-post input {
+.new-post input, .new-comment input {
     box-sizing: border-box;
     padding: 10px 0;
     background: transparent;
@@ -59,7 +59,10 @@ form {
     font-size: 1em;
 }
 
-.new-post input:focus{
+.new-post input:focus,
+.new-comment input:focus,
+input:focus,
+button:focus{
     outline: 0;
 }
 
@@ -69,7 +72,7 @@ ul {
     background: white;
 }
 
-.delete {
+.delete, .edit, .discuss, .locking, .voting {
     float: right;
     font-weight: bold;
     background: none;
@@ -110,6 +113,37 @@ header .hide-completed {
     margin-left: 5px;
 }
 
+.gravatar, .gravatar + div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gravatar + div {
+    margin-left: 20px;
+    line-height: 30px;
+}
+
+.list-comment {
+    margin-left: 50px;
+}
+
+.tab {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    width: 100%;
+}
+
+.tab li {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 25%;
+    padding: 0;
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     li {
         padding: 12px 15px;
@@ -120,7 +154,8 @@ header .hide-completed {
         clear: both;
     }
 
-    .new-post input {
+    .new-post input,
+    .new-comment input{
         padding-bottom: 5px;
     }
 }
