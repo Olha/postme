@@ -144,6 +144,10 @@ header .hide-completed {
     text-align: center;
 }
 
+.box-load-more {
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     li {
         padding: 12px 15px;

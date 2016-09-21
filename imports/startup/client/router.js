@@ -4,6 +4,7 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { Meteor } from 'meteor/meteor';
+import { Tracker } from 'meteor/tracker'
 
 // Import to load these templates
 import '../../ui/layouts/body';

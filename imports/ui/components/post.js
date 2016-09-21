@@ -36,8 +36,8 @@ Template.post.helpers({
 		let index = _.indexOf(this.votes, Meteor.userId());
 		return index !== -1
 	},
-	isPublicOfOthers(){
-		return (this.owner == Meteor.userId()) || ((this.owner != Meteor.userId()) && this.public)
+	isMyself() {
+		return this.owner == Meteor.userId();
 	}
 });
 

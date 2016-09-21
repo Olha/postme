@@ -1,15 +1,17 @@
 <template name="post">
 <li>
-    <button class="delete">&times;</button>
-    <button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-    <button class="discuss"><i class="fa fa-comments" aria-hidden="true"></i></button>
-    {{#if public}}
-        <button class="locking"><i class="fa fa-unlock" aria-hidden="true"></i></button>
-    {{else}}
-        <button class="locking"><i class="fa fa-lock" aria-hidden="true"></i></button>
+    {{#if isMyself}}
+        {{#if public}}
+            <button class="locking"><i class="fa fa-unlock" aria-hidden="true"></i></button>
+        {{else}}
+            <button class="delete">&times;</button>
+            <button class="locking"><i class="fa fa-lock" aria-hidden="true"></i></button>
+            <button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+        {{/if}}
     {{/if}}
 
-    {{#if isPublicOfOthers}}
+    <button class="discuss"><i class="fa fa-comments" aria-hidden="true"></i></button>
+    {{#if public}}
         {{#if isUserVoted}}
             <button class="voting unvote"><i class="fa fa-star" aria-hidden="true"></i></button>
         {{else}}
