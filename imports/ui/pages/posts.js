@@ -5,6 +5,7 @@
 import { Posts } from '../../api/posts/posts.js';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { FlowHelpers } from '../../../lib/client/route-helpers';
 import '../components/post.js'
 import './posts.html';
 
